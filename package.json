@@ -1,0 +1,30 @@
+{
+  "name": "serioflix",
+  "version": "1.0.0",
+  "description": "منصة مشاهدة الأفلام والمسلسلات المجانية",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000",
+    "build": "echo 'Building SerioFlix...'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "أفلام",
+    "مسلسلات",
+    "أنمي",
+    "مشاهدة",
+    "مجاني",
+    "SerioFlix"
+  ],
+  "author": "SerioFlix Team",
+  "license": "MIT",
+  "homepage": "https://serioflix.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/serioflix.git"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
+

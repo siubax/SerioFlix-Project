@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# منع فهرسة صفحات الإدارة
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+
+# منع فهرسة ملفات النظام
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# السماح بفهرسة الصور
+Allow: /images/
+
+# خريطة الموقع
+Sitemap: https://serioflix.com/sitemap.xml
+

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SerioFlix - شاهد أحدث الأفلام والمسلسلات مجاناً</title>
+    <meta name="description" content="شاهد أحدث الأفلام والمسلسلات مجاناً على SerioFlix. أفضل تجربة مشاهدة لكل أفراد العائلة">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h1>SerioFlix</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#movies" class="nav-link">أفلام</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#series" class="nav-link">مسلسلات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#anime" class="nav-link">أنمي</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">من نحن</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">اتصل بنا</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-btn" onclick="toggleSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="login-btn" onclick="showLogin()">
+                        <i class="fas fa-user"></i>
+                        تسجيل الدخول
+                    </button>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Search Bar -->
+        <div class="search-container" id="searchContainer">
+            <div class="search-box">
+                <input type="text" placeholder="ابحث عن الأفلام والمسلسلات..." id="searchInput">
+                <button class="search-submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">شاهد أحدث الأفلام والمسلسلات مجاناً</h1>
+                <p class="hero-description">
+                    استمتع بمشاهدة آلاف الأفلام والمسلسلات بجودة عالية. أضف المفضلات واستمتع بأفضل تجربة مشاهدة لكل أفراد العائلة
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-play"></i>
+                        ابدأ المشاهدة الآن
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        اعرف المزيد
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="featured-movie">
+                    <img src="https://via.placeholder.com/400x600/333/fff?text=فيلم+مميز" alt="فيلم مميز">
+                    <div class="movie-overlay">
+                        <h3>فيلم الأسبوع</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>9.2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Additions Section -->
+    <section class="content-section" id="latest">
+        <div class="container">
+            <h2 class="section-title">أحدث الإضافات</h2>
+            <div class="movies-grid" id="latestMovies">
+                <!-- Movies will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Most Watched Section -->
+    <section class="content-section" id="popular">
+        <div class="container">
+            <h2 class="section-title">الأكثر مشاهدة</h2>
+            <div class="movies-grid" id="popularMovies">
+                <!-- Movies will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section class="content-section" id="movies">
+        <div class="container">
+            <h2 class="section-title">أفلام</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">الكل</button>
+                <button class="tab-btn" data-category="action">أكشن</button>
+                <button class="tab-btn" data-category="comedy">كوميديا</button>
+                <button class="tab-btn" data-category="drama">دراما</button>
+                <button class="tab-btn" data-category="horror">رعب</button>
+            </div>
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Series Section -->
+    <section class="content-section" id="series">
+        <div class="container">
+            <h2 class="section-title">مسلسلات</h2>
+            <div class="movies-grid" id="seriesGrid">
+                <!-- Series will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Anime Section -->
+    <section class="content-section" id="anime">
+        <div class="container">
+            <h2 class="section-title">أنمي</h2>
+            <div class="movies-grid" id="animeGrid">
+                <!-- Anime will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="content-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">من نحن</h2>
+                <p>
+                    SerioFlix هي منصة مشاهدة مجانية تهدف إلى توفير أفضل تجربة مشاهدة للأفلام والمسلسلات لجميع أفراد العائلة. 
+                    نحن نؤمن بأن الترفيه الجيد يجب أن يكون متاحاً للجميع، لذلك نقدم محتوى متنوع يناسب جميع الأذواق والأعمار.
+                </p>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-film"></i>
+                        <h3>محتوى متنوع</h3>
+                        <p>آلاف الأفلام والمسلسلات من جميع أنحاء العالم</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-hd-video"></i>
+                        <h3>جودة عالية</h3>
+                        <p>مشاهدة بجودة HD و 4K</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>متوافق مع جميع الأجهزة</h3>
+                        <p>شاهد على الهاتف، التابلت، أو الكمبيوتر</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>قائمة المفضلات</h3>
+                        <p>احفظ أفلامك ومسلسلاتك المفضلة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>نحن هنا لمساعدتك</h3>
+                    <p>إذا كان لديك أي استفسار أو اقتراح، لا تتردد في التواصل معنا</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@serioflix.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+966 123 456 789</span>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="الاسم" required>
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                    <textarea placeholder="الرسالة" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SerioFlix</h3>
+                    <p>أفضل منصة لمشاهدة الأفلام والمسلسلات مجاناً</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#movies">أفلام</a></li>
+                        <li><a href="#series">مسلسلات</a></li>
+                        <li><a href="#anime">أنمي</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>الدعم</h4>
+                    <ul>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>اشترك في النشرة الإخبارية</h4>
+                    <p>احصل على آخر الأخبار والإضافات الجديدة</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="البريد الإلكتروني">
+                        <button class="btn btn-primary">اشترك</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SerioFlix. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLogin()">&times;</span>
+            <h2>تسجيل الدخول</h2>
+            <form class="login-form">
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+                <p>ليس لديك حساب؟ <a href="#" onclick="showRegister()">إنشاء حساب جديد</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRegister()">&times;</span>
+            <h2>إنشاء حساب جديد</h2>
+            <form class="register-form">
+                <input type="text" placeholder="الاسم الكامل" required>
+                <input type="email" placeholder="البريد الإلكتروني" required>
+                <input type="password" placeholder="كلمة المرور" required>
+                <input type="password" placeholder="تأكيد كلمة المرور" required>
+                <button type="submit" class="btn btn-primary">إنشاء الحساب</button>
+                <p>لديك حساب بالفعل؟ <a href="#" onclick="showLogin()">تسجيل الدخول</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
